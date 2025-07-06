@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka One', cursive;
+            background: linear-gradient(to top, #a166ab, #f3c6e2);
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .clouds div {
+            position: absolute;
+            background: #ffffff10;
+            border-radius: 50%;
+            animation: floatClouds 60s linear infinite;
+        }
+
+        .cloud1 { top: 20%; left: -10%; width: 200px; height: 100px; animation-delay: 0s; }
+        .cloud2 { top: 40%; left: -20%; width: 250px; height: 120px; animation-delay: 10s; }
+        .cloud3 { top: 60%; left: -15%; width: 300px; height: 140px; animation-delay: 20s; }
+
+        @keyframes floatClouds {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(150%); }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+            z-index: 1;
+        }
+
+        .header {
+            background: linear-gradient(to top, #a166ab, #e7a2d3);
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #eee;
+        }
+
+        .header button {
+            margin-top: 10px;
+            background-color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            color: #a166ab;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form {
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            color: #a166ab;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 20px;
+            background: #e5d0e9;
+            color: #5e4a62;
+            font-size: 14px;
+        }
+
+        .form button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            background-color: #a166ab;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .form a {
+            display: block;
+            margin-top: 15px;
+            color: #888;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translate(-50%, -60%); }
+            100% { opacity: 1; transform: translate(-50%, -50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="clouds">
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>WELCOME</h1>
+            <p>Don't you have account?</p>
+            <button onclick="location.href='signup.php'">Sign up</button>
+        </div>
+        <form class="form" action="login.php" method="post">
+            <h2>Login</h2>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">LOGIN</button>
+            <a href="#">Forgot your Password?</a>
+        </form>
+    </div>
+</body>
+</html>
